@@ -118,20 +118,10 @@ class SignupController: UIViewController {
         guard let fullname = fullnameTextField.text else { return }
         let accountType = accountTypeSegmentedControl.selectedSegmentIndex
         
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+        AuthService.signUp(email: email, password: password, fullname: fullname, accountType: accountType) { result, error in
             if let error = error {
                 self.showAlert("Failed to sign up", error.localizedDescription)
                 return
-            }
-            guard let uid = result?.user.uid else { return }
-            
-            let data: [String: Any] = ["email": email, "fullname": fullname, "accountType": accountType]
-            
-            Database.database().reference().child("users").child(uid).updateChildValues(data) { error, ref in
-                if let error = error {
-                    self.showAlert("Failed to sign up", error.localizedDescription)
-                    return
-                }
             }
         }
     }
