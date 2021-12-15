@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>98152612652-pljtvq7d24734ke8sujg4m5ilpj3gc4v.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.98152612652-pljtvq7d24734ke8sujg4m5ilpj3gc4v</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDpmn4c0JpNL5IdHY7h80r_PQ5WR6SyxoI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>98152612652</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Dinara-Zimanova.uber-clone</string>
+	<key>PROJECT_ID</key>
+	<string>uber-clone-74b67</string>
+	<key>STORAGE_BUCKET</key>
+	<string>uber-clone-74b67.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:98152612652:ios:7c26ba7709a25e4c036289</string>
+</dict>
+</plist>
