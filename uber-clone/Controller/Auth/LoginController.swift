@@ -55,18 +55,13 @@ class LoginViewController: UIViewController {
         let attributedString = NSMutableAttributedString.init(string: "Don't have an account? ", attributes: [.font: UIFont.systemFont(ofSize: 14), .foregroundColor: UIColor.lightGray])
         attributedString.append(NSAttributedString(string: "Sign Up", attributes: [.font: UIFont.boldSystemFont(ofSize: 14), .foregroundColor: UIColor.mainBlue]))
         
+        button.addTarget(self, action: #selector(tappedSignUpButton), for: .touchUpInside)
         button.setAttributedTitle(attributedString, for: .normal)
         return button
     }()
-    private lazy var loginButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .mainBlue
-        button.setTitle("Log In", for: .normal)
-        button.setTitleColor(UIColor.init(white: 1, alpha: 0.5), for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        button.layer.cornerRadius = 5
-        button.isEnabled = false
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    private lazy var loginButton: AuthButton = {
+        let button = AuthButton(buttonTitle: "Log In")
+        button.addTarget(self, action: #selector(tappedLoginButton), for: .touchUpInside)
         return button
     }()
     
@@ -80,6 +75,16 @@ class LoginViewController: UIViewController {
         return .lightContent
     }
     
+    // MARK: - Selectors
+    @objc func tappedSignUpButton() {
+        let controller = SignupController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func tappedLoginButton() {
+        
+    }
+    
     // MARK: - Methods
     func configureView() {
         [titleLabel, inputsStackView, signUpButton].forEach { view.addSubview($0) }
@@ -87,7 +92,7 @@ class LoginViewController: UIViewController {
         [emailIconImageView, emailTextField].forEach { emailContainerView.addSubview($0) }
         [passwordIconImageView, passwordTextField].forEach { passwordContainerView.addSubview($0) }
         
-        view.backgroundColor = UIColor.init(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)
+        view.backgroundColor = .backgroundColor
         makeConstaints()
     }
     
