@@ -13,6 +13,8 @@
 		9C2CF73727694EF000860D5D /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF73627694EF000860D5D /* SignupController.swift */; };
 		9C2CF73B276950C100860D5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C2CF73A276950C100860D5D /* Assets.xcassets */; };
 		9C2CF73D27695AD100860D5D /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF73C27695AD100860D5D /* InputTextField.swift */; };
+		9C2CF73F2769A79900860D5D /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF73E2769A79900860D5D /* InputView.swift */; };
+		9C2CF7422769ABE600860D5D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF7412769ABE600860D5D /* Colors.swift */; };
 		9C4431F327694BDC006EA7BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4431F227694BDC006EA7BA /* AppDelegate.swift */; };
 		9C4431F527694BDC006EA7BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4431F427694BDC006EA7BA /* SceneDelegate.swift */; };
 		9C4431FA27694BDC006EA7BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4431F827694BDC006EA7BA /* Main.storyboard */; };
@@ -51,6 +53,8 @@
 		9C2CF73627694EF000860D5D /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		9C2CF73A276950C100860D5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C2CF73C27695AD100860D5D /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
+		9C2CF73E2769A79900860D5D /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		9C2CF7412769ABE600860D5D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		9C4431EF27694BDC006EA7BA /* uber-clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uber-clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C4431F227694BDC006EA7BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C4431F427694BDC006EA7BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,7 +138,6 @@
 		9C2CF72C27694E3A00860D5D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9C2CF73C27695AD100860D5D /* InputTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,6 +179,16 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		9C2CF7402769A79E00860D5D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9C2CF73C27695AD100860D5D /* InputTextField.swift */,
+				9C2CF73E2769A79900860D5D /* InputView.swift */,
+				9C2CF7412769ABE600860D5D /* Colors.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9C4431E627694BDC006EA7BA = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +220,7 @@
 				9C2CF72B27694E3400860D5D /* Controller */,
 				9C2CF72F27694E5200860D5D /* Provider */,
 				9C2CF73027694E5A00860D5D /* Util */,
+				9C2CF7402769A79E00860D5D /* Extensions */,
 				9C4431F227694BDC006EA7BA /* AppDelegate.swift */,
 				9C4431F427694BDC006EA7BA /* SceneDelegate.swift */,
 				9C4431F827694BDC006EA7BA /* Main.storyboard */,
@@ -475,10 +489,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C4431FD27694BDC006EA7BA /* uber_clone.xcdatamodeld in Sources */,
+				9C2CF7422769ABE600860D5D /* Colors.swift in Sources */,
 				9C4431F327694BDC006EA7BA /* AppDelegate.swift in Sources */,
 				9C4431F527694BDC006EA7BA /* SceneDelegate.swift in Sources */,
 				9C2CF73727694EF000860D5D /* SignupController.swift in Sources */,
 				9C2CF73527694EDD00860D5D /* LoginController.swift in Sources */,
+				9C2CF73F2769A79900860D5D /* InputView.swift in Sources */,
 				9C2CF73D27695AD100860D5D /* InputTextField.swift in Sources */,
 				9C2CF73227694EB700860D5D /* MainController.swift in Sources */,
 			);

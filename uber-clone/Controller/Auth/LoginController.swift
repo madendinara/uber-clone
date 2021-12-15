@@ -18,13 +18,17 @@ class LoginViewController: UIViewController {
         label.text = "UBER"
         return label
     }()
-    private lazy var emailTextField: InputTextField = {
-        let textField = InputTextField(placeholderText: "Email")
-        return textField
+    private lazy var emailTextField = InputTextField(placeholderText: "Email", isSecure: false)
+    private lazy var passwordTextField = InputTextField(placeholderText: "Password", isSecure: true)
+    private lazy var emailContainerView: InputView = {
+        let view = InputView()
+        view.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        return view
     }()
-    private lazy var passwordTextField: InputTextField = {
-        let textField = InputTextField(placeholderText: "Password")
-        return textField
+    private lazy var passwordContainerView: InputView = {
+        let view = InputView()
+        view.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        return view
     }()
     private lazy var emailIconImageView: UIImageView = {
         let imageView =  UIImageView()
@@ -38,34 +42,6 @@ class LoginViewController: UIViewController {
         imageView.alpha = 0.8
         return imageView
     }()
-    private lazy var emailContainerView: UIView = {
-        let view = UIView()
-        
-        let separator = UIView()
-        separator.backgroundColor = .lightGray
-        view.addSubview(separator)
-        separator.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
-            make.height.equalTo(0.5)
-        }
-        
-        return view
-    }()
-    private lazy var passwordContainerView: UIView = {
-        let view = UIView()
-        
-        let separator = UIView()
-        separator.backgroundColor = .lightGray
-        view.addSubview(separator)
-        separator.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
-            make.height.equalTo(0.5)
-        }
-        
-        return view
-    }()
     private lazy var inputsStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton])
         stackView.distribution = .fillEqually
@@ -77,19 +53,20 @@ class LoginViewController: UIViewController {
         let button = UIButton(type: .system)
         
         let attributedString = NSMutableAttributedString.init(string: "Don't have an account? ", attributes: [.font: UIFont.systemFont(ofSize: 14), .foregroundColor: UIColor.lightGray])
-        attributedString.append(NSAttributedString(string: "Sign Up", attributes: [.font: UIFont.boldSystemFont(ofSize: 14), .foregroundColor: UIColor.systemBlue]))
+        attributedString.append(NSAttributedString(string: "Sign Up", attributes: [.font: UIFont.boldSystemFont(ofSize: 14), .foregroundColor: UIColor.mainBlue]))
         
         button.setAttributedTitle(attributedString, for: .normal)
         return button
     }()
     private lazy var loginButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = .mainBlue
         button.setTitle("Log In", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(UIColor.init(white: 1, alpha: 0.5), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         button.layer.cornerRadius = 5
         button.isEnabled = false
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         return button
     }()
     
@@ -121,7 +98,7 @@ class LoginViewController: UIViewController {
         }
         emailIconImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.equalToSuperview().inset(8)
+            make.leading.equalToSuperview()
             make.size.equalTo(CGSize(width: 24, height: 24))
         }
         emailTextField.snp.makeConstraints { make in
@@ -131,7 +108,7 @@ class LoginViewController: UIViewController {
         }
         passwordIconImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.equalToSuperview().inset(8)
+            make.leading.equalToSuperview()
             make.size.equalTo(CGSize(width: 24, height: 24))
         }
         passwordTextField.snp.makeConstraints { make in
@@ -143,7 +120,7 @@ class LoginViewController: UIViewController {
             make.top.equalTo(titleLabel.snp.bottom).offset(40)
             make.centerX.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(160)
+            make.height.greaterThanOrEqualTo(160)
         }
         signUpButton.snp.makeConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(12)

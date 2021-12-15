@@ -11,12 +11,14 @@ class InputTextField: UITextField {
     
     // MARK: - Properties
     var placeholderText: String
+    var isSecure: Bool
     
     // MARK: - Init
-    init(placeholderText: String) {
+    init(placeholderText: String, isSecure: Bool) {
         self.placeholderText = placeholderText
+        self.isSecure = isSecure
         super.init(frame: .zero)
-        self.configureTextField(self.placeholderText)
+        self.configureTextField(self.placeholderText, isSecure: self.isSecure)
     }
     
     required init?(coder: NSCoder) {
@@ -24,7 +26,8 @@ class InputTextField: UITextField {
     }
     
     // MARK: - Methods
-    func configureTextField(_ placeholderText: String) {
+    func configureTextField(_ placeholderText: String, isSecure: Bool) {
+        isSecureTextEntry = isSecure
         borderStyle = .none
         font = UIFont.systemFont(ofSize: 16)
         textColor = .white
