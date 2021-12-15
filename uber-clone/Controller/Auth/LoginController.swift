@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -82,7 +83,15 @@ class LoginViewController: UIViewController {
     }
     
     @objc func tappedLoginButton() {
-        
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                self.showAlert("Failed to log in", error.localizedDescription)
+                return
+            }
+            print("Success")
+        }
     }
     
     // MARK: - Methods

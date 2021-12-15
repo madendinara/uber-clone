@@ -11,6 +11,7 @@ target 'uber-clone' do
 	pod 'SDWebImage'
 	pod 'YPImagePicker'
 	pod 'JGProgressHUD'
+	pod 'GeoFire', '>= 1.1'
   use_frameworks!
 
   # Pods for uber-clone

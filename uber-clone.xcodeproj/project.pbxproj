@@ -14,7 +14,7 @@
 		9C2CF73B276950C100860D5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C2CF73A276950C100860D5D /* Assets.xcassets */; };
 		9C2CF73D27695AD100860D5D /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF73C27695AD100860D5D /* InputTextField.swift */; };
 		9C2CF73F2769A79900860D5D /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF73E2769A79900860D5D /* InputView.swift */; };
-		9C2CF7422769ABE600860D5D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF7412769ABE600860D5D /* Colors.swift */; };
+		9C2CF7422769ABE600860D5D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF7412769ABE600860D5D /* Extension.swift */; };
 		9C2CF744276A654700860D5D /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF743276A654700860D5D /* AuthButton.swift */; };
 		9C2CF746276A675F00860D5D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF745276A675F00860D5D /* AuthService.swift */; };
 		9C2CF748276A67D500860D5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C2CF747276A67D500860D5D /* GoogleService-Info.plist */; };
@@ -26,6 +26,7 @@
 		9C44320D27694BDE006EA7BA /* uber_cloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44320C27694BDE006EA7BA /* uber_cloneTests.swift */; };
 		9C44321727694BDE006EA7BA /* uber_cloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44321627694BDE006EA7BA /* uber_cloneUITests.swift */; };
 		9C44321927694BDE006EA7BA /* uber_cloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44321827694BDE006EA7BA /* uber_cloneUITestsLaunchTests.swift */; };
+		9CBC2C45276A79E2000514A3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC2C44276A79E2000514A3 /* User.swift */; };
 		C6BDD2CA6E62251873530EB0 /* Pods_uber_cloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB32C8873EE8FA7F472EB202 /* Pods_uber_cloneTests.framework */; };
 		D4EE52DDC8939B281651815B /* Pods_uber_clone_uber_cloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70CA921B351224BAF6374781 /* Pods_uber_clone_uber_cloneUITests.framework */; };
 /* End PBXBuildFile section */
@@ -57,7 +58,7 @@
 		9C2CF73A276950C100860D5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C2CF73C27695AD100860D5D /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		9C2CF73E2769A79900860D5D /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
-		9C2CF7412769ABE600860D5D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		9C2CF7412769ABE600860D5D /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		9C2CF743276A654700860D5D /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		9C2CF745276A675F00860D5D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		9C2CF747276A67D500860D5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		9C44321227694BDE006EA7BA /* uber-cloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "uber-cloneUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C44321627694BDE006EA7BA /* uber_cloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uber_cloneUITests.swift; sourceTree = "<group>"; };
 		9C44321827694BDE006EA7BA /* uber_cloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uber_cloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9CBC2C44276A79E2000514A3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CA02BD5E0B2E3F5A57A15385 /* Pods-uber-clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uber-clone.release.xcconfig"; path = "Target Support Files/Pods-uber-clone/Pods-uber-clone.release.xcconfig"; sourceTree = "<group>"; };
 		D82E612DEA4D59FB4CDEA3E7 /* Pods_uber_clone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uber_clone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB17A2D74ECF1CA9902542E /* Pods-uber-cloneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uber-cloneTests.debug.xcconfig"; path = "Target Support Files/Pods-uber-cloneTests/Pods-uber-cloneTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		9C2CF72E27694E4D00860D5D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9CBC2C44276A79E2000514A3 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,7 +195,7 @@
 		9C2CF7402769A79E00860D5D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9C2CF7412769ABE600860D5D /* Colors.swift */,
+				9C2CF7412769ABE600860D5D /* Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -498,8 +501,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CBC2C45276A79E2000514A3 /* User.swift in Sources */,
 				9C4431FD27694BDC006EA7BA /* uber_clone.xcdatamodeld in Sources */,
-				9C2CF7422769ABE600860D5D /* Colors.swift in Sources */,
+				9C2CF7422769ABE600860D5D /* Extension.swift in Sources */,
 				9C4431F327694BDC006EA7BA /* AppDelegate.swift in Sources */,
 				9C4431F527694BDC006EA7BA /* SceneDelegate.swift in Sources */,
 				9C2CF744276A654700860D5D /* AuthButton.swift in Sources */,
