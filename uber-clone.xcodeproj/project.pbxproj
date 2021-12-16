@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		69D5ED8E101088E4B08BE6C9 /* Pods_uber_clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82E612DEA4D59FB4CDEA3E7 /* Pods_uber_clone.framework */; };
-		9C2CF73227694EB700860D5D /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF73127694EB700860D5D /* MainController.swift */; };
 		9C2CF73527694EDD00860D5D /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF73427694EDD00860D5D /* LoginController.swift */; };
 		9C2CF73727694EF000860D5D /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF73627694EF000860D5D /* SignupController.swift */; };
 		9C2CF73B276950C100860D5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C2CF73A276950C100860D5D /* Assets.xcassets */; };
@@ -27,6 +26,7 @@
 		9C44321727694BDE006EA7BA /* uber_cloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44321627694BDE006EA7BA /* uber_cloneUITests.swift */; };
 		9C44321927694BDE006EA7BA /* uber_cloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44321827694BDE006EA7BA /* uber_cloneUITestsLaunchTests.swift */; };
 		9CBC2C45276A79E2000514A3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC2C44276A79E2000514A3 /* User.swift */; };
+		9CBC2C47276AAA68000514A3 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC2C46276AAA68000514A3 /* HomeController.swift */; };
 		C6BDD2CA6E62251873530EB0 /* Pods_uber_cloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB32C8873EE8FA7F472EB202 /* Pods_uber_cloneTests.framework */; };
 		D4EE52DDC8939B281651815B /* Pods_uber_clone_uber_cloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70CA921B351224BAF6374781 /* Pods_uber_clone_uber_cloneUITests.framework */; };
 /* End PBXBuildFile section */
@@ -52,7 +52,6 @@
 		351A0AB3A2646D8B7409B309 /* Pods-uber-clone-uber-cloneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uber-clone-uber-cloneUITests.release.xcconfig"; path = "Target Support Files/Pods-uber-clone-uber-cloneUITests/Pods-uber-clone-uber-cloneUITests.release.xcconfig"; sourceTree = "<group>"; };
 		70CA921B351224BAF6374781 /* Pods_uber_clone_uber_cloneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uber_clone_uber_cloneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7451C2B825EEAC63EBDFD7E2 /* Pods-uber-cloneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uber-cloneTests.release.xcconfig"; path = "Target Support Files/Pods-uber-cloneTests/Pods-uber-cloneTests.release.xcconfig"; sourceTree = "<group>"; };
-		9C2CF73127694EB700860D5D /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		9C2CF73427694EDD00860D5D /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		9C2CF73627694EF000860D5D /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		9C2CF73A276950C100860D5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +74,7 @@
 		9C44321627694BDE006EA7BA /* uber_cloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uber_cloneUITests.swift; sourceTree = "<group>"; };
 		9C44321827694BDE006EA7BA /* uber_cloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uber_cloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9CBC2C44276A79E2000514A3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9CBC2C46276AAA68000514A3 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		CA02BD5E0B2E3F5A57A15385 /* Pods-uber-clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uber-clone.release.xcconfig"; path = "Target Support Files/Pods-uber-clone/Pods-uber-clone.release.xcconfig"; sourceTree = "<group>"; };
 		D82E612DEA4D59FB4CDEA3E7 /* Pods_uber_clone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uber_clone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB17A2D74ECF1CA9902542E /* Pods-uber-cloneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uber-cloneTests.debug.xcconfig"; path = "Target Support Files/Pods-uber-cloneTests/Pods-uber-cloneTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				9C2CF73327694ECD00860D5D /* Auth */,
-				9C2CF73127694EB700860D5D /* MainController.swift */,
+				9CBC2C46276AAA68000514A3 /* HomeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -507,12 +507,12 @@
 				9C4431F327694BDC006EA7BA /* AppDelegate.swift in Sources */,
 				9C4431F527694BDC006EA7BA /* SceneDelegate.swift in Sources */,
 				9C2CF744276A654700860D5D /* AuthButton.swift in Sources */,
+				9CBC2C47276AAA68000514A3 /* HomeController.swift in Sources */,
 				9C2CF746276A675F00860D5D /* AuthService.swift in Sources */,
 				9C2CF73727694EF000860D5D /* SignupController.swift in Sources */,
 				9C2CF73527694EDD00860D5D /* LoginController.swift in Sources */,
 				9C2CF73F2769A79900860D5D /* InputView.swift in Sources */,
 				9C2CF73D27695AD100860D5D /* InputTextField.swift in Sources */,
-				9C2CF73227694EB700860D5D /* MainController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

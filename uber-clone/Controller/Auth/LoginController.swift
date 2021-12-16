@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  LoginController.swift
 //  uber-clone
 //
 //  Created by Динара Зиманова on 12/14/21.
@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginController: UIViewController {
     
     // MARK: - Properties
     private lazy var titleLabel: UILabel = {
@@ -90,6 +90,10 @@ class LoginViewController: UIViewController {
             if let error = error {
                 self.showAlert("Failed to log in", error.localizedDescription)
             }
+            let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+            guard let controller = keyWindow?.rootViewController as? HomeController else { return }
+            controller.configureView()
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
