@@ -14,11 +14,13 @@ class HomeController: UIViewController {
     // MARK: - Properties
     private let mapView = MKMapView()
     private let locationManager = CLLocationManager()
+    private let locationInputActivationView = LocationInputActivationView()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         checkIfUserLoggedIn()
+        configureView()
 //        signOut()
         enableLocationServices()
     }
@@ -26,20 +28,32 @@ class HomeController: UIViewController {
     // MARK: - Methods
     func configureView() {
         configureMapView()
+        view.addSubview(locationInputActivationView)
+        makeConstaints()
+        locationInputActivationView.alpha = 0
+        
+        UIView.animate(withDuration: 2) {
+            self.locationInputActivationView.alpha = 1
+        }
     }
     
     func configureMapView() {
-        [mapView].forEach { view.addSubview($0) }
-        makeConstaints()
+        view.addSubview(mapView)
         
         mapView.showsUserLocation = true
         mapView.userTrackingMode = .follow
         let region = MKCoordinateRegion(center: mapView.centerCoordinate, span: MKCoordinateSpan(latitudeDelta: mapView.region.span.latitudeDelta * 1.05, longitudeDelta: mapView.region.span.longitudeDelta * 1.05))
-        self.mapView.setRegion(region, animated: true)    }
+        self.mapView.setRegion(region, animated: true)
+        
+    }
     
     func makeConstaints() {
-        mapView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        mapView.frame = view.frame
+        locationInputActivationView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(32)
+            make.size.equalTo(CGSize(width: view.frame.width * 0.75, height: 50))
+            
         }
     }
     
