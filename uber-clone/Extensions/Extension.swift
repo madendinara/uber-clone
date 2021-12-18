@@ -26,3 +26,13 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
 }
+
+extension UIView {
+    
+    func addShadow() {
+        layer.shadowOpacity = 0.5
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = .zero
+    }
+}

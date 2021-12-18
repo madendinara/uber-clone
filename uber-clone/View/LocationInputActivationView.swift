@@ -7,7 +7,14 @@
 
 import UIKit
 
+protocol LocationInputActivationViewDelegate: class {
+    func presentLocation()
+}
+
 class LocationInputActivationView: UIView {
+    
+    // MARK: - Internal properties
+    weak var delegate: LocationInputActivationViewDelegate?
     
     // MARK: - Properties
     let indicatorView: UIView = {
@@ -35,13 +42,13 @@ class LocationInputActivationView: UIView {
     
     // MARK: - Methods
     func configureView() {
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.5
-        layer.shadowOffset = .zero
-        layer.masksToBounds = false
+        addShadow()
         backgroundColor = .white
         [indicatorView, placeholderLabel].forEach { addSubview($0) }
         makeConstraints()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tappedInputView))
+        addGestureRecognizer(tap)
     }
     
     func makeConstraints() {
@@ -54,5 +61,9 @@ class LocationInputActivationView: UIView {
             make.centerY.equalToSuperview()
             make.leading.equalTo(indicatorView.snp.trailing).offset(20)
         }
+    }
+    
+    @objc func tappedInputView() {
+        delegate?.presentLocation()
     }
 }

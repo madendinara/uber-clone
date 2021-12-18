@@ -12,6 +12,7 @@ import MapKit
 class HomeController: UIViewController {
     
     // MARK: - Properties
+    private let locationInputView = LocationInputView()
     private let mapView = MKMapView()
     private let locationManager = CLLocationManager()
     private let locationInputActivationView = LocationInputActivationView()
@@ -27,13 +28,31 @@ class HomeController: UIViewController {
     
     // MARK: - Methods
     func configureView() {
+        locationInputActivationView.delegate = self
         configureMapView()
         view.addSubview(locationInputActivationView)
+        locationInputView.alpha = 0
         makeConstaints()
         locationInputActivationView.alpha = 0
         
         UIView.animate(withDuration: 2) {
             self.locationInputActivationView.alpha = 1
+        }
+    }
+    
+    func configureInputView() {
+        view.addSubview(locationInputView)
+        locationInputView.delegate = self
+        locationInputView.alpha = 0
+        UIView.animate(withDuration: 0.5) {
+            self.locationInputView.alpha = 1
+        } completion: { isCompleted in
+            print("Success")
+        }
+
+        locationInputView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+            make.height.equalTo(200)
         }
     }
     
@@ -53,7 +72,6 @@ class HomeController: UIViewController {
             make.centerX.equalToSuperview()
             make.top.equalTo(view.safeAreaLayoutGuide).inset(32)
             make.size.equalTo(CGSize(width: view.frame.width * 0.75, height: 50))
-            
         }
     }
     
@@ -107,4 +125,28 @@ extension HomeController: CLLocationManagerDelegate {
             locationManager.requestAlwaysAuthorization()
         }
     }
+}
+
+// MARK: - LocationInputActivationViewDelegate
+extension HomeController: LocationInputActivationViewDelegate {
+    
+    func presentLocation() {
+        locationInputActivationView.alpha = 0
+        configureInputView()
+    }
+}
+
+extension HomeController: LocationInputViewDelegate {
+    
+    func dismissView() {
+        UIView.animate(withDuration: 0.5) {
+            self.locationInputView.alpha = 0
+        } completion: { isCompleted in
+            UIView.animate(withDuration: 0.5) {
+                self.locationInputActivationView.alpha = 1
+            }
+        }
+
+    }
+    
 }
