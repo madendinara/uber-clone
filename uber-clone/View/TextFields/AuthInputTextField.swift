@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InputTextField: UITextField {
+class AuthInputTextField: UITextField {
     
     // MARK: - Properties
     var placeholderText: String

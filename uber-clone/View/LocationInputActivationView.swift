@@ -17,7 +17,7 @@ class LocationInputActivationView: UIView {
     weak var delegate: LocationInputActivationViewDelegate?
     
     // MARK: - Properties
-    let indicatorView: UIView = {
+    private lazy var indicatorView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         return view

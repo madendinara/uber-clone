@@ -19,8 +19,8 @@ class LoginController: UIViewController {
         label.text = "UBER"
         return label
     }()
-    private lazy var emailTextField = InputTextField(placeholderText: "Email", isSecure: false)
-    private lazy var passwordTextField = InputTextField(placeholderText: "Password", isSecure: true)
+    private lazy var emailTextField = AuthInputTextField(placeholderText: "Email", isSecure: false)
+    private lazy var passwordTextField = AuthInputTextField(placeholderText: "Password", isSecure: true)
     private lazy var emailContainerView: InputView = {
         let view = InputView()
         view.heightAnchor.constraint(equalToConstant: 50).isActive = true

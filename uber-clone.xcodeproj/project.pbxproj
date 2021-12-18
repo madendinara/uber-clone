@@ -11,7 +11,7 @@
 		9C2CF73527694EDD00860D5D /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF73427694EDD00860D5D /* LoginController.swift */; };
 		9C2CF73727694EF000860D5D /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF73627694EF000860D5D /* SignupController.swift */; };
 		9C2CF73B276950C100860D5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C2CF73A276950C100860D5D /* Assets.xcassets */; };
-		9C2CF73D27695AD100860D5D /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF73C27695AD100860D5D /* InputTextField.swift */; };
+		9C2CF73D27695AD100860D5D /* AuthInputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF73C27695AD100860D5D /* AuthInputTextField.swift */; };
 		9C2CF73F2769A79900860D5D /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF73E2769A79900860D5D /* InputView.swift */; };
 		9C2CF7422769ABE600860D5D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF7412769ABE600860D5D /* Extension.swift */; };
 		9C2CF744276A654700860D5D /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF743276A654700860D5D /* AuthButton.swift */; };
@@ -26,6 +26,7 @@
 		9C44321727694BDE006EA7BA /* uber_cloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44321627694BDE006EA7BA /* uber_cloneUITests.swift */; };
 		9C44321927694BDE006EA7BA /* uber_cloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44321827694BDE006EA7BA /* uber_cloneUITestsLaunchTests.swift */; };
 		9C5AC972276E7DDD00B30380 /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5AC971276E7DDD00B30380 /* LocationInputView.swift */; };
+		9C5AC975276E910A00B30380 /* LocationInputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5AC974276E910A00B30380 /* LocationInputTextField.swift */; };
 		9CBC2C45276A79E2000514A3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC2C44276A79E2000514A3 /* User.swift */; };
 		9CBC2C47276AAA68000514A3 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC2C46276AAA68000514A3 /* HomeController.swift */; };
 		9CC6A0DE276D572000A5FE90 /* LocationInputActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6A0DD276D572000A5FE90 /* LocationInputActivationView.swift */; };
@@ -57,7 +58,7 @@
 		9C2CF73427694EDD00860D5D /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		9C2CF73627694EF000860D5D /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		9C2CF73A276950C100860D5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9C2CF73C27695AD100860D5D /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
+		9C2CF73C27695AD100860D5D /* AuthInputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInputTextField.swift; sourceTree = "<group>"; };
 		9C2CF73E2769A79900860D5D /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		9C2CF7412769ABE600860D5D /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		9C2CF743276A654700860D5D /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
@@ -76,6 +77,7 @@
 		9C44321627694BDE006EA7BA /* uber_cloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uber_cloneUITests.swift; sourceTree = "<group>"; };
 		9C44321827694BDE006EA7BA /* uber_cloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uber_cloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9C5AC971276E7DDD00B30380 /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
+		9C5AC974276E910A00B30380 /* LocationInputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputTextField.swift; sourceTree = "<group>"; };
 		9CBC2C44276A79E2000514A3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9CBC2C46276AAA68000514A3 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		9CC6A0DD276D572000A5FE90 /* LocationInputActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputActivationView.swift; sourceTree = "<group>"; };
@@ -150,9 +152,9 @@
 		9C2CF72C27694E3A00860D5D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9C2CF73C27695AD100860D5D /* InputTextField.swift */,
+				9C5AC976276E921600B30380 /* Buttons */,
+				9C5AC973276E90E300B30380 /* TextFields */,
 				9C2CF73E2769A79900860D5D /* InputView.swift */,
-				9C2CF743276A654700860D5D /* AuthButton.swift */,
 				9CC6A0DD276D572000A5FE90 /* LocationInputActivationView.swift */,
 				9C5AC971276E7DDD00B30380 /* LocationInputView.swift */,
 			);
@@ -265,6 +267,23 @@
 				9C44321827694BDE006EA7BA /* uber_cloneUITestsLaunchTests.swift */,
 			);
 			path = "uber-cloneUITests";
+			sourceTree = "<group>";
+		};
+		9C5AC973276E90E300B30380 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				9C2CF73C27695AD100860D5D /* AuthInputTextField.swift */,
+				9C5AC974276E910A00B30380 /* LocationInputTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		9C5AC976276E921600B30380 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				9C2CF743276A654700860D5D /* AuthButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -517,10 +536,11 @@
 				9CBC2C47276AAA68000514A3 /* HomeController.swift in Sources */,
 				9C5AC972276E7DDD00B30380 /* LocationInputView.swift in Sources */,
 				9C2CF746276A675F00860D5D /* AuthService.swift in Sources */,
+				9C5AC975276E910A00B30380 /* LocationInputTextField.swift in Sources */,
 				9C2CF73727694EF000860D5D /* SignupController.swift in Sources */,
 				9C2CF73527694EDD00860D5D /* LoginController.swift in Sources */,
 				9C2CF73F2769A79900860D5D /* InputView.swift in Sources */,
-				9C2CF73D27695AD100860D5D /* InputTextField.swift in Sources */,
+				9C2CF73D27695AD100860D5D /* AuthInputTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -47,7 +47,7 @@ class HomeController: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.locationInputView.alpha = 1
         } completion: { isCompleted in
-            print("Success")
+            
         }
 
         locationInputView.snp.makeConstraints { make in
