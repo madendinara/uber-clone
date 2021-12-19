@@ -12,6 +12,11 @@ import MapKit
 class HomeController: UIViewController {
     
     // MARK: - Properties
+    private var user: User? {
+        didSet {
+            locationInputView.user = user
+        }
+    }
     private let locationInputView = LocationInputView()
     private let mapView = MKMapView()
     private let locationManager = CLLocationManager()
@@ -26,6 +31,7 @@ class HomeController: UIViewController {
         configureView()
 //        signOut()
         enableLocationServices()
+        getUserData()
     }
     
     // MARK: - Methods
@@ -115,6 +121,12 @@ class HomeController: UIViewController {
             try Auth.auth().signOut()
         } catch let error {
             print("Error of signing out is \(error.localizedDescription)")
+        }
+    }
+    
+    func getUserData() {
+        Service.getUserData { user in
+            self.user = user
         }
     }
 }

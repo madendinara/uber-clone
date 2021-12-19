@@ -14,6 +14,11 @@ protocol LocationInputViewDelegate: class {
 class LocationInputView: UIView {
     
     // MARK: - Internal properties
+    var user: User? {
+        didSet {
+            nameTitleLabel.text = user?.fullname
+        }
+    }
     weak var delegate: LocationInputViewDelegate?
     
     // MARK: - Properties
@@ -25,7 +30,6 @@ class LocationInputView: UIView {
     }()
     private lazy var nameTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Dinara"
         label.textColor = .darkGray
         label.font = UIFont.systemFont(ofSize: 18)
         return label

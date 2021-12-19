@@ -15,7 +15,7 @@
 		9C2CF73F2769A79900860D5D /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF73E2769A79900860D5D /* InputView.swift */; };
 		9C2CF7422769ABE600860D5D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF7412769ABE600860D5D /* Extension.swift */; };
 		9C2CF744276A654700860D5D /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF743276A654700860D5D /* AuthButton.swift */; };
-		9C2CF746276A675F00860D5D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF745276A675F00860D5D /* AuthService.swift */; };
+		9C2CF746276A675F00860D5D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CF745276A675F00860D5D /* Service.swift */; };
 		9C2CF748276A67D500860D5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C2CF747276A67D500860D5D /* GoogleService-Info.plist */; };
 		9C4431F327694BDC006EA7BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4431F227694BDC006EA7BA /* AppDelegate.swift */; };
 		9C4431F527694BDC006EA7BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4431F427694BDC006EA7BA /* SceneDelegate.swift */; };
@@ -63,7 +63,7 @@
 		9C2CF73E2769A79900860D5D /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		9C2CF7412769ABE600860D5D /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		9C2CF743276A654700860D5D /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
-		9C2CF745276A675F00860D5D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		9C2CF745276A675F00860D5D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		9C2CF747276A67D500860D5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9C4431EF27694BDC006EA7BA /* uber-clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uber-clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C4431F227694BDC006EA7BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 		9C2CF72F27694E5200860D5D /* Provider */ = {
 			isa = PBXGroup;
 			children = (
-				9C2CF745276A675F00860D5D /* AuthService.swift */,
+				9C2CF745276A675F00860D5D /* Service.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -547,7 +547,7 @@
 				9CBC2C47276AAA68000514A3 /* HomeController.swift in Sources */,
 				9C5AC972276E7DDD00B30380 /* LocationInputView.swift in Sources */,
 				9C5AC979276EA2EA00B30380 /* LocationCell.swift in Sources */,
-				9C2CF746276A675F00860D5D /* AuthService.swift in Sources */,
+				9C2CF746276A675F00860D5D /* Service.swift in Sources */,
 				9C5AC975276E910A00B30380 /* LocationInputTextField.swift in Sources */,
 				9C2CF73727694EF000860D5D /* SignupController.swift in Sources */,
 				9C2CF73527694EDD00860D5D /* LoginController.swift in Sources */,

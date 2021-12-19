@@ -118,7 +118,7 @@ class SignupController: UIViewController {
         guard let fullname = fullnameTextField.text else { return }
         let accountType = accountTypeSegmentedControl.selectedSegmentIndex
         
-        AuthService.signUp(email: email, password: password, fullname: fullname, accountType: accountType) { result, error in
+        Service.signUp(email: email, password: password, fullname: fullname, accountType: accountType) { result, error in
             if let error = error {
                 self.showAlert("Failed to sign up", error.localizedDescription)
                 return

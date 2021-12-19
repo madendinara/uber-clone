@@ -86,7 +86,7 @@ class LoginController: UIViewController {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         
-        AuthService.logIn(email: email, password: password) { result, error in
+        Service.logIn(email: email, password: password) { result, error in
             if let error = error {
                 self.showAlert("Failed to log in", error.localizedDescription)
             }
