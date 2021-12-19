@@ -46,6 +46,7 @@ class HomeController: UIViewController {
     func configureTableView() {
         view.addSubview(tableView)
         tableView.backgroundColor = .white
+        tableView.tableFooterView = UIView()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(LocationCell.self, forCellReuseIdentifier: "LocationCell")
@@ -156,7 +157,6 @@ extension HomeController: LocationInputActivationViewDelegate {
 extension HomeController: LocationInputViewDelegate {
     
     func dismissView() {
-        locationInputView.removeFromSuperview()
         UIView.animate(withDuration: 0.5) {
             self.locationInputView.alpha = 0
             UIView.animate(withDuration: 0.5, delay: 0, options: UIView.AnimationOptions.curveLinear) {
@@ -165,6 +165,7 @@ extension HomeController: LocationInputViewDelegate {
                 
             }
         } completion: { isCompleted in
+            self.locationInputView.removeFromSuperview()
             UIView.animate(withDuration: 0.5) {
                 self.locationInputActivationView.alpha = 1
             }
@@ -176,7 +177,7 @@ extension HomeController: LocationInputViewDelegate {
 
 extension HomeController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return section == 0 ? 2 : 5
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

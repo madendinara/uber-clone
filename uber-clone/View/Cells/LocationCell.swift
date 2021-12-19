@@ -24,6 +24,13 @@ class LocationCell: UITableViewCell {
         label.text = "Location description"
         return label
     }()
+    private lazy var labelStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [titleLabel, descriptionLabel])
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 4
+        return stackView
+    }()
     
     // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -37,18 +44,15 @@ class LocationCell: UITableViewCell {
     
     // MARK: - Methods
     func configureView() {
-        [titleLabel, descriptionLabel].forEach { contentView.addSubview($0) }
+        selectionStyle = .none
+        addSubview(labelStackView)
         makeConstaints()
     }
     
     func makeConstaints() {
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(12)
+        labelStackView.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(12)
-        }
-        descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(4)
-            make.leading.equalToSuperview().inset(12)
+            make.centerY.equalToSuperview()
         }
     }
 }
