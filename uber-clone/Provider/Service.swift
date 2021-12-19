@@ -7,15 +7,23 @@
 
 import Foundation
 import Firebase
+import GeoFire
 
 struct Service {
     
-    static func signUp(email: String, password: String, fullname: String, accountType: Int, completion: @escaping(AuthDataResult?, Error?) -> Void) {
+    static func signUp(location: CLLocation, email: String, password: String, fullname: String, accountType: Int, completion: @escaping(AuthDataResult?, Error?) -> Void) {
+        
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             guard let uid = result?.user.uid else { return }
-            
             let data: [String: Any] = ["email": email, "fullname": fullname, "accountType": accountType]
             
+            if accountType == 1 {
+                var geofire = GeoFire(firebaseRef: Database.database().reference().child("driver-locations"))
+                geofire.setLocation(location, forKey: uid) { error in
+                    Database.database().reference().child("users").child(uid).updateChildValues(data) { error, ref in }
+                }
+            }
+                        
             Database.database().reference().child("users").child(uid).updateChildValues(data) { error, ref in
                 
             }

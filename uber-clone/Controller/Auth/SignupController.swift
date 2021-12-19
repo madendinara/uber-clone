@@ -8,8 +8,12 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import GeoFire
 
 class SignupController: UIViewController {
+    
+    // MARK: - Internal properties
+    private let location = LocationHandler.shared.locationManager.location
     
     // MARK: - Properties
     private lazy var titleLabel: UILabel = {
@@ -116,9 +120,10 @@ class SignupController: UIViewController {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         guard let fullname = fullnameTextField.text else { return }
+
         let accountType = accountTypeSegmentedControl.selectedSegmentIndex
-        
-        Service.signUp(email: email, password: password, fullname: fullname, accountType: accountType) { result, error in
+        guard let location = location else { return }
+        Service.signUp(location: location, email: email, password: password, fullname: fullname, accountType: accountType) { result, error in
             if let error = error {
                 self.showAlert("Failed to sign up", error.localizedDescription)
                 return

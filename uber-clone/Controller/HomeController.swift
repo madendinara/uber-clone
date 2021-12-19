@@ -19,7 +19,7 @@ class HomeController: UIViewController {
     }
     private let locationInputView = LocationInputView()
     private let mapView = MKMapView()
-    private let locationManager = CLLocationManager()
+    private let locationManager = LocationHandler.shared.locationManager
     private let locationInputActivationView = LocationInputActivationView()
     private let tableView = UITableView()
     private let locationInputViewHeight: CGFloat = 180
@@ -134,27 +134,21 @@ class HomeController: UIViewController {
 // MARK: - Location Services
 extension HomeController: CLLocationManagerDelegate {
     func enableLocationServices () {
-        locationManager.delegate = self
         switch CLLocationManager.authorizationStatus() {
         case .restricted, .denied:
             break
         case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
+            locationManager?.requestWhenInUseAuthorization()
         case .authorizedAlways:
-            locationManager.startUpdatingLocation()
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager?.startUpdatingLocation()
+            locationManager?.desiredAccuracy = kCLLocationAccuracyBest
         case .authorizedWhenInUse:
-            locationManager.requestAlwaysAuthorization()
+            locationManager?.requestAlwaysAuthorization()
         @unknown default:
             break
         }
     }
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
-            locationManager.requestAlwaysAuthorization()
-        }
-    }
+
 }
 
 // MARK: - LocationInputActivationViewDelegate
