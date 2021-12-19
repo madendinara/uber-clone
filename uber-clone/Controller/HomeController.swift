@@ -16,6 +16,8 @@ class HomeController: UIViewController {
     private let mapView = MKMapView()
     private let locationManager = CLLocationManager()
     private let locationInputActivationView = LocationInputActivationView()
+    private let tableView = UITableView()
+    private let locationInputViewHeight: CGFloat = 180
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -38,6 +40,16 @@ class HomeController: UIViewController {
         UIView.animate(withDuration: 2) {
             self.locationInputActivationView.alpha = 1
         }
+        configureTableView()
+    }
+    
+    func configureTableView() {
+        view.addSubview(tableView)
+        tableView.backgroundColor = .white
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(LocationCell.self, forCellReuseIdentifier: "LocationCell")
+        tableView.frame = CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: self.view.frame.height - locationInputViewHeight)
     }
     
     func configureInputView() {
@@ -46,13 +58,18 @@ class HomeController: UIViewController {
         locationInputView.alpha = 0
         UIView.animate(withDuration: 0.5) {
             self.locationInputView.alpha = 1
-        } completion: { isCompleted in
-            
+        } completion: { _ in
+            UIView.animate(withDuration: 0.5, delay: 0, options: UIView.AnimationOptions.curveLinear) {
+                self.tableView.frame.origin.y = self.locationInputViewHeight
+            } completion: { _ in
+                
+            }
+
         }
 
         locationInputView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
-            make.height.equalTo(200)
+            make.height.equalTo(180)
         }
     }
     
@@ -139,8 +156,14 @@ extension HomeController: LocationInputActivationViewDelegate {
 extension HomeController: LocationInputViewDelegate {
     
     func dismissView() {
+        locationInputView.removeFromSuperview()
         UIView.animate(withDuration: 0.5) {
             self.locationInputView.alpha = 0
+            UIView.animate(withDuration: 0.5, delay: 0, options: UIView.AnimationOptions.curveLinear) {
+                self.tableView.frame.origin.y = self.view.frame.height
+            } completion: { _ in
+                
+            }
         } completion: { isCompleted in
             UIView.animate(withDuration: 0.5) {
                 self.locationInputActivationView.alpha = 1
@@ -149,4 +172,33 @@ extension HomeController: LocationInputViewDelegate {
 
     }
     
+}
+
+extension HomeController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = .systemGray6
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 52
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath) as! LocationCell
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 52
+    }
 }
