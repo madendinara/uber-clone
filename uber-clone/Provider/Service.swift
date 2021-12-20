@@ -34,12 +34,25 @@ struct Service {
         Auth.auth().signIn(withEmail: email, password: password, completion: completion)
     }
     
-    static func getUserData(completion: @escaping(User) -> Void) {
-        guard let currentUid = Auth.auth().currentUser?.uid else { return }
-        Database.database().reference().child("users").child(currentUid).observeSingleEvent(of: .value) { snapshot in
+    static func getUserData(uid: String, completion: @escaping(User) -> Void) {
+        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { snapshot in
             guard let dictionary = snapshot.value as? [String:Any] else { return }
             let user = User(dictionary: dictionary)
             completion(user)
+        }
+    }
+    
+    static func getDrivers(location: CLLocation, completion: @escaping(User) -> Void) {
+        let geofire = GeoFire(firebaseRef: Database.database().reference().child("driver-locations"))
+        
+        Database.database().reference().child("driver-locations").observe(.value) { snapshot in
+            geofire.query(at: location, withRadius: 50).observe(.keyEntered, with: { uid, location in
+                getUserData(uid: uid) { user in
+                    var driver = user
+                    driver.location = location
+                    completion(user)
+                }
+            })
         }
     }
 }

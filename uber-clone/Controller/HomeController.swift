@@ -32,6 +32,8 @@ class HomeController: UIViewController {
 //        signOut()
         enableLocationServices()
         getUserData()
+        getDrivers()
+
     }
     
     // MARK: - Methods
@@ -125,8 +127,20 @@ class HomeController: UIViewController {
     }
     
     func getUserData() {
-        Service.getUserData { user in
+        guard let currentUid = Auth.auth().currentUser?.uid else { return }
+
+        Service.getUserData(uid: currentUid) { user in
             self.user = user
+        }
+    }
+    
+    func getDrivers() {
+        guard let location = locationManager?.location else {
+            return
+        }
+        
+        Service.getDrivers(location: location) { user in
+            print("Driver is \(user.fullname)")
         }
     }
 }
