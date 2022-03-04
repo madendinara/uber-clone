@@ -22,6 +22,19 @@ MVVM - Model View ViewModel
 <img src="https://user-images.githubusercontent.com/22132871/156748685-061d6019-7bbe-41ce-b9a9-a67c48b775dd.png"  height="700">
 </p>
 
+<h2>Frameworks used in this project </h2>
+<ul>
+  <li>SnapKit</li>
+  <li>Firebase/Auth</li>
+  <li>Firebase/Firestore</li>
+  <li>Firebase/Analytics</li>
+  <li>Firebase/Storage</li>
+  <li>SDWebImage</li>
+  <li>YPImagePicker</li>
+  <li>GeoFire</li>
+
+</ul>
+
 <h2>Developed with a passion by</h2>
 Dinara Zimanova
 <a href="http://linkedin.com/in/madendinara/">Linkedin(Dinara Z.)</a>
