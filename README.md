@@ -15,7 +15,7 @@ MVVM - Model View ViewModel
   <li>Saving and showing real time driver annotations on the map</li>
 
 </ul>
-<h2>Signin up/in screens</h2>
+<h2>Signing up/in screens</h2>
 
 <p align=”center”>
 <img src="https://user-images.githubusercontent.com/22132871/156748631-fa4ab6b4-cee7-4bda-9946-776fe0e7047b.png" height="700">
